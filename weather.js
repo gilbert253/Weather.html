@@ -11,9 +11,9 @@ const getFetch = () =>{
   fetch(weatherApi).
   then(res => res.json()).
   then(data=>{
-    temperature.textInput = `${data.main.temp}`;
-    wind.textInput = `${data.wind.speed}`;
-    clouds.textInput = `${data.clouds.all}`;
+    temperature.textInput = data.wind;
+//    wind.textInput = `${data.wind.speed}`;
+//    clouds.textInput = `${data.clouds.all}`;
   })
   .catch(error => {
     console.log(error)//is there more that should go into the errors?
