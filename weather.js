@@ -3,6 +3,7 @@ const btn = document.getElementById("submit-button");
 const temperature = document.getElementById("temperature");
 const wind = document.getElementById("wind");
 const clouds = document.getElementById("cloud");
+const test = document.getElementById("test")
 
 const getFetch = () =>{
     let city = input.value;
@@ -11,9 +12,9 @@ const getFetch = () =>{
   fetch(weatherApi).
   then(res => res.json()).
   then(data=>{
-    temperature.textInput = data;
-//    wind.textInput = `${data.wind.speed}`;
-//    clouds.textInput = `${data.clouds.all}`;
+    temperature.innerText = `${data.main.temp}`;
+    wind.innerText = `${data.wind.speed}`;
+    clouds.innerText = `${data.clouds.all}`;
   })
   .catch(error => {
     console.log(error)//is there more that should go into the errors?
