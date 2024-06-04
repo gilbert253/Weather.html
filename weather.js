@@ -4,19 +4,16 @@ const temperature = document.getElementById("temperature");
 const wind = document.getElementById("wind");
 const clouds = document.getElementById("cloud");
 
-
-
-
 const getFetch = () =>{
-  let city = input.value;
-  let weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=17b21eed487c55d2ec2bac78727c83dc`;
+    let city = input.value;
+    let weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=17b21eed487c55d2ec2bac78727c83dc`;
 
   fetch(weatherApi).
   then(res => res.json()).
   then(data=>{
-    temperature.textInput = `${data.temperature.value}`;
+    temperature.textInput = `${data.main.temp}`;
     wind.textInput = `${data.wind.speed}`;
-    clouds.textInput = `${data.clouds.value}`;
+    clouds.textInput = `${data.clouds.all}`;
   })
   .catch(error => {
     console.log(error)//is there more that should go into the errors?
@@ -26,4 +23,3 @@ const getFetch = () =>{
 btn.addEventListener("click", getFetch);
 
 //api key 17b21eed487c55d2ec2bac78727c83dc
-
