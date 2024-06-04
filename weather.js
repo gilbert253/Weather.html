@@ -6,9 +6,11 @@ const clouds = document.getElementById("cloud");
 
 
 
-let weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=17b21eed487c55d2ec2bac78727c83dc`;
 
 const getFetch = () =>{
+  
+  let weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=17b21eed487c55d2ec2bac78727c83dc`;
+
   fetch(weatherApi).
   then(res => res.json()).
   then(data=>{
