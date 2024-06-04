@@ -11,7 +11,7 @@ const getFetch = () =>{
   fetch(weatherApi).
   then(res => res.json()).
   then(data=>{
-    temperature.textInput = data.wind;
+    temperature.textInput = data;
 //    wind.textInput = `${data.wind.speed}`;
 //    clouds.textInput = `${data.clouds.all}`;
   })
