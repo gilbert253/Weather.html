@@ -3,10 +3,10 @@ const btn = document.getElementById("submit-button");
 const temperature = document.getElementById("temperature");
 const wind = document.getElementById("wind");
 const clouds = document.getElementById("cloud");
-const test = document.getElementById("test")
-const windyImg = document.getElementById("windy-image")
+const windyImg = document.getElementById("windy-picture")
 const heatImg = document.getElementById("heat-image")
 const cloudImg = document.getElementById("cloud-image")
+const pictureSpan = document.getElementById("pictures")
 
 const getFetch = () =>{
     let city = input.value;
@@ -15,24 +15,25 @@ const getFetch = () =>{
   fetch(weatherApi).
   then(res => res.json()).
   then(data=>{
-    temperature.value = `Temperature(c): ${data.main.temp}`;
-    wind.value = `Wind Speed: ${data.wind.speed}`;
-    clouds.value = `Cloud number? ${data.clouds.all}`;
+    temperature.innerText =  parseInt(data.main.temp);
+    wind.innerHTML = parseInt(data.wind.speed);
+    clouds.innerText = parseInt(data.clouds.all);
+  
+  if (wind.innerText>=1){
+    windyImg.src="https://www.ephotozine.com/resize/articles/28777/128320_1382474914.jpg?RTUdGk5cXyJFCgsJVANtdxU+cVRdHxFYFw1Gewk0T1JYFEtzen5YdgthHHsyBFtG"
+  }
+  if (clouds.innerText>1){
+    cloudImg.src="https://www.thoughtco.com/thmb/81QGhTao0s1fj7PydEBkBl7gl0U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/521928855-56a9e2925f9b58b7d0ffac0a.jpg"
+  }
+  if (temperature.innerText >29){
+    heatImg.src="https://canadianart.ca/wp-content/uploads/2018/10/Arjuna-Neuman-and-Denise-Ferreira-da-Silva_serpent-rain-2016-1024x576.jpg"
+  } else if (temperature.innerText<1){
+    heatImg.src="https://www.thoughtco.com/thmb/yVaEVnUwsvgT9nYW7E1JZ0b7Bsc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/the-ice-of-lake-baikal-620730000-5828935c3df78c6f6a5cae1c.jpg"
+  }
   })
   .catch(error => {
     console.log(error)//is there more that should go into the errors?
   })
-  if (wind.value<=10){
-    windyImg.style = "visibility:hidden"
-  }
-  if (temperature.value <= 33){
-    heatImg.style = "visibility:hidden"
-  }
-  if (cloudImg.value <= 9){
-    cloudImg.style = "visibility:hidden"
-  }
-};
+}
 
 btn.addEventListener("click", getFetch);
-
-//api key 17b21eed487c55d2ec2bac78727c83dc
