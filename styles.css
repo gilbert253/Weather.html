@@ -3,6 +3,9 @@
 ::after {
 background: linear-gradient(#0668b3, #0f8d43);
 }
+body{
+    color: white;
+}
 .windy-picture{
     border-radius: 50%;
     height: 150px;
