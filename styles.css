@@ -1,10 +1,8 @@
-*,
-::before,
-::after {
-background: linear-gradient(#0668b3, #0f8d43);
-}
+
 body{
     color: white;
+    background: #0f8d43;
+
 }
 .windy-picture{
     border-radius: 50%;
