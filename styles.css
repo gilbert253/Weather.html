@@ -3,12 +3,16 @@ body{
 }
 .windy-picture{
     border-radius: 50%;
+    height: 150px;
+    width: 150px;
 }
 .heat-image{
     border-radius: 50%;
-
+    height: 150px;
+    width: 150px;
 }
 .cloud-image{
     border-radius: 50%;
-
+    height: 150px;
+    width: 150px;
 }
