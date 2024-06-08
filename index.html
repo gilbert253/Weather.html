@@ -13,22 +13,34 @@
         <button id="submit-button" type="submit">button</button>
         <span class="info-dump">
             <div>
-                <p class="heading">Temperature (c): </p>
+                <p class="heading">Forecast: </p>
+                <p id="forecast"></p>
+            </div>
+            <div>
+                <p class="heading">Current Temperature (c): </p>
                 <p id="temperature"></p>
+            </div>
+            <div>
+                <p class="heading">Today's Max. Temperature (c): </p>
+                <p id="temperature-max"></p>
+            </div>
+            <div>
+                <p class="heading">Today's Min. Temperature (c): </p>
+                <p id="temperature-min"></p>
             </div>
             <div>
                 <p class="heading">Cloud: </p>
                 <p id="cloud"></p>
             </div>
             <div>
-                <p class="heading">Wind speed (km/h): </p>
+                <p class="heading">Wind Speed (km/h): </p>
                 <p id="wind"></p>
             </div>
         </span>
         <span>
-         <img id="windy-picture" class="windy-picture"></img>
-         <img id="heat-image" class="heat-image"></img>
-         <img id="cloud-image" class="cloud-image"></img>
+         <img id="windy-picture" class="windy-picture">  
+         <img id="heat-image" class="heat-image">
+         <img id="cloud-image" class="cloud-image">
         </span>
       </body>
       <script src="weather.js"></script>
