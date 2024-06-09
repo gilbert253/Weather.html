@@ -19,11 +19,11 @@ const getFetch = () =>{
   fetch(weatherApi).
   then(res => res.json()).
   then(data=>{
-    forecast.innerText = data.weather.main
+    forecast.innerText = data.weather[0].main
     temperatureMin.innerText = data.main.temp_min
-    temperatureMax = data.main.temp_max
+    temperatureMax.innerText = data.main.temp_max
     temperature.innerText =  parseInt(data.main.temp);
-    wind.innerHTML = parseInt(data.wind.speed);
+    wind.innerText = parseInt(data.wind.speed);
     clouds.innerText = parseInt(data.clouds.all);
   /*
   if (wind.innerText>=1){
@@ -49,8 +49,8 @@ btn.addEventListener("click", getFetch);
 const clearFunction = () =>{
     forecast.innerText = "";
     temperatureMin.innerText = "";
-    temperatureMax = "";
+    temperatureMax.innerText = "";
     temperature.innerText = "";
-    wind.innerHTML = "";
+    wind.innerText = "";
     clouds.innerText = "";
 }
